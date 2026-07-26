@@ -1,0 +1,11 @@
+package com.mikedevcol.restaurantapi.dto.response;
+
+import java.util.List;
+
+public record OwnerResponse(
+    Long id,
+    String firstName,
+    String lastName,
+    OwnerContactInfoResponse contactInfo,
+    List<RestaurantResponse> restaurants) {
+}
