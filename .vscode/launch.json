@@ -1,0 +1,43 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Run - Dev",
+      "request": "launch",
+      "mainClass": "com.mikedevcol.restaurantapi.RestaurantApiApplication",
+      "projectName": "restaurantapi",
+      "console": "internalConsole",
+      "args": [
+        "--spring.profiles.active=dev"
+      ],
+      "preLaunchTask": "docker-compose-up",
+      "envFile": "${workspaceFolder}/.env.dev"
+    },
+    {
+      "type": "java",
+      "name": "Run - Prod",
+      "request": "launch",
+      "mainClass": "com.mikedevcol.restaurantapi.RestaurantApiApplication",
+      "projectName": "restaurantapi",
+      "console": "internalConsole",
+      "args": [
+        "--spring.profiles.active=prod"
+      ]
+    },
+    {
+      "type": "java",
+      "name": "Run - Local",
+      "request": "launch",
+      "mainClass": "com.mikedevcol.restaurantapi.RestaurantApiApplication",
+      "projectName": "restaurantapi",
+      "console": "integratedTerminal",
+      "args": [
+        "--spring.profiles.active=local"
+      ]
+    }
+  ]
+}
