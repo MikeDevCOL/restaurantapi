@@ -37,7 +37,8 @@
       "console": "integratedTerminal",
       "args": [
         "--spring.profiles.active=local"
-      ]
+      ],
+      "envFile": "${workspaceFolder}/.env.dev"
     }
   ]
 }
