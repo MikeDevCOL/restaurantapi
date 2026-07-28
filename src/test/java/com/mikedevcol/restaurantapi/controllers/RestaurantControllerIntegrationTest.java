@@ -9,12 +9,14 @@ import java.util.Set;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
+import org.springframework.context.annotation.Import;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 
+import com.mikedevcol.restaurantapi.configuration.TestContainerConfig;
 import com.mikedevcol.restaurantapi.models.Owner;
 import com.mikedevcol.restaurantapi.models.OwnerContactInfo;
 import com.mikedevcol.restaurantapi.models.PhoneNumberPrefix;
@@ -23,7 +25,8 @@ import com.mikedevcol.restaurantapi.repositories.PhoneNumberPrefixRepository;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-@ActiveProfiles("test")
+@ActiveProfiles("integration")
+@Import(TestContainerConfig.class)
 class RestaurantControllerIntegrationTest {
 
   @Autowired
