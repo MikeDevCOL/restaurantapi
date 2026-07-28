@@ -4,6 +4,8 @@ import java.util.LinkedHashSet;
 import java.util.Objects;
 import java.util.Set;
 
+import com.mikedevcol.restaurantapi.security.models.User;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -52,6 +54,10 @@ public class Owner {
   @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
   @JoinColumn(name = "contact_info_id", nullable = false, unique = true)
   private OwnerContactInfo contactInfo;
+
+  @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+  @JoinColumn(name = "user_id", nullable = false, unique = true)
+  private User user;
 
   public void assignContactInfo(OwnerContactInfo contactInfo) {
     this.contactInfo = Objects.requireNonNull(contactInfo, "contactInfo is required");

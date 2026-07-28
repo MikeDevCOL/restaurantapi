@@ -44,7 +44,6 @@ class RestaurantControllerIntegrationTest {
   void setUp() {
     PhoneNumberPrefix prefix = phoneNumberPrefixRepository.save(new PhoneNumberPrefix(null, "+57", "Colombia"));
     OwnerContactInfo info = OwnerContactInfo.builder()
-        .email("restaurant-owner@test.com")
         .phoneNumber("3005550000")
         .phoneNumberPrefix(prefix)
         .build();

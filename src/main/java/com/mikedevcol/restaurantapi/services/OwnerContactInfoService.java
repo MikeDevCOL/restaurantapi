@@ -25,9 +25,6 @@ public class OwnerContactInfoService {
 
   @Transactional
   public OwnerContactInfoResponse create(OwnerContactInfoCreateRequest request) {
-    if (ownerContactInfoRepository.existsByEmailIgnoreCase(request.email().trim())) {
-      throw new ConflictException("Email already exists");
-    }
     if (ownerContactInfoRepository.existsByPhoneNumber(request.phoneNumber().trim())) {
       throw new ConflictException("Phone number already exists");
     }
