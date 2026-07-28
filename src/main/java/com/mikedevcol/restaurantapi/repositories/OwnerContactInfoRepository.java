@@ -6,7 +6,5 @@ import com.mikedevcol.restaurantapi.models.OwnerContactInfo;
 
 public interface OwnerContactInfoRepository extends JpaRepository<OwnerContactInfo, Long> {
 
-  boolean existsByEmailIgnoreCase(String email);
-
   boolean existsByPhoneNumber(String phoneNumber);
 }

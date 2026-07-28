@@ -23,7 +23,7 @@ class RestaurantApiMapperTest {
     OwnerCreateRequest request = new OwnerCreateRequest(
         "Ana",
         "Perez",
-        new OwnerContactInfoCreateRequest("ana@test.com", "123", 1L),
+        new OwnerContactInfoCreateRequest("123", 1L),
         List.of(new OwnerRestaurantCreateRequest("RST001")));
 
     PhoneNumberPrefix prefix = new PhoneNumberPrefix(1L, "+57", "Colombia");

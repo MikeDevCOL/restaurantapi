@@ -39,20 +39,21 @@ class OwnerContactInfoServiceTest {
 
   @Test
   void createShouldPersistWhenDependenciesExist() {
-    OwnerContactInfoCreateRequest request = new OwnerContactInfoCreateRequest("a@b.com", "111", 1L);
+    OwnerContactInfoCreateRequest request = new OwnerContactInfoCreateRequest("111", 1L);
     PhoneNumberPrefix prefix = new PhoneNumberPrefix(1L, "+57", "Colombia");
-    OwnerContactInfo entity = OwnerContactInfo.builder().email("a@b.com").phoneNumber("111").phoneNumberPrefix(prefix)
+    OwnerContactInfo entity = OwnerContactInfo.builder()
+        .phoneNumber("111")
+        .phoneNumberPrefix(prefix)
         .build();
-    OwnerContactInfo saved = OwnerContactInfo.builder().id(10L).email("a@b.com").phoneNumber("111")
+    OwnerContactInfo saved = OwnerContactInfo.builder().id(10L).phoneNumber("111")
         .phoneNumberPrefix(prefix).build();
 
-    when(ownerContactInfoRepository.existsByEmailIgnoreCase("a@b.com")).thenReturn(false);
     when(ownerContactInfoRepository.existsByPhoneNumber("111")).thenReturn(false);
     when(phoneNumberPrefixRepository.findById(1L)).thenReturn(Optional.of(prefix));
     when(mapper.toEntity(request, prefix)).thenReturn(entity);
     when(ownerContactInfoRepository.save(entity)).thenReturn(saved);
     when(mapper.toResponse(saved)).thenReturn(
-        new OwnerContactInfoResponse(10L, "a@b.com", "111", new PhoneNumberPrefixResponse(1L, "+57", "Colombia")));
+        new OwnerContactInfoResponse(10L, "111", new PhoneNumberPrefixResponse(1L, "+57", "Colombia")));
 
     OwnerContactInfoResponse result = service.create(request);
 
@@ -61,8 +62,7 @@ class OwnerContactInfoServiceTest {
 
   @Test
   void createShouldFailWhenPrefixDoesNotExist() {
-    OwnerContactInfoCreateRequest request = new OwnerContactInfoCreateRequest("a@b.com", "111", 9L);
-    when(ownerContactInfoRepository.existsByEmailIgnoreCase("a@b.com")).thenReturn(false);
+    OwnerContactInfoCreateRequest request = new OwnerContactInfoCreateRequest("111", 9L);
     when(ownerContactInfoRepository.existsByPhoneNumber("111")).thenReturn(false);
     when(phoneNumberPrefixRepository.findById(9L)).thenReturn(Optional.empty());
 

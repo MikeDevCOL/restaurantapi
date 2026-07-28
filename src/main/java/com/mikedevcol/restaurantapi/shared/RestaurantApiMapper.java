@@ -28,7 +28,6 @@ public class RestaurantApiMapper {
 
   public OwnerContactInfo toEntity(OwnerContactInfoCreateRequest request, PhoneNumberPrefix prefix) {
     return OwnerContactInfo.builder()
-        .email(request.email().trim())
         .phoneNumber(request.phoneNumber().trim())
         .phoneNumberPrefix(prefix)
         .build();
@@ -67,7 +66,6 @@ public class RestaurantApiMapper {
   public OwnerContactInfoResponse toResponse(OwnerContactInfo entity) {
     return new OwnerContactInfoResponse(
         entity.getId(),
-        entity.getEmail(),
         entity.getPhoneNumber(),
         toResponse(entity.getPhoneNumberPrefix()));
   }

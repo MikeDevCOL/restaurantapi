@@ -62,9 +62,7 @@ public class OwnerService {
   }
 
   private void validateUniqueness(OwnerCreateRequest request) {
-    if (ownerContactInfoRepository.existsByEmailIgnoreCase(request.contactInfo().email().trim())) {
-      throw new ConflictException("Email already exists");
-    }
+
     if (ownerContactInfoRepository.existsByPhoneNumber(request.contactInfo().phoneNumber().trim())) {
       throw new ConflictException("Phone number already exists");
     }
