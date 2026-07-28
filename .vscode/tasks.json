@@ -1,0 +1,14 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "docker-compose-up",
+            "type": "shell",
+            "command": "docker compose --env-file ../.env.dev -f compose.dev.yml up -d",
+            "options": {
+                "cwd": "${workspaceFolder}/docker"
+            },
+            "problemMatcher": []
+        }
+    ]
+}
