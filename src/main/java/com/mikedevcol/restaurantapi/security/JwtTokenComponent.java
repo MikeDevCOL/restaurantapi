@@ -122,7 +122,7 @@ public class JwtTokenComponent {
     char[] password = secret.toCharArray();
     byte[] salt = issuer.getBytes(StandardCharsets.UTF_8);
     try {
-      KeySpec keySpec = new PBEKeySpec(password, salt, 65_536, 256);
+      KeySpec keySpec = new PBEKeySpec(password, salt, 600_000, 256);
       SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
       byte[] keyBytes = factory.generateSecret(keySpec).getEncoded();
       return new SecretKeySpec(keyBytes, "HmacSHA256");
