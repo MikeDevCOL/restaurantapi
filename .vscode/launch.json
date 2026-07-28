@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Launch Restaurant API",
+      "request": "launch",
+      "mainClass": "com.mikedevcol.restaurantapi.RestaurantApiApplication",
+      "projectName": "restaurantapi",
+      "envFile": "${workspaceFolder}/.dev.env"
+    }
+  ]
+}
