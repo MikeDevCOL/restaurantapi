@@ -1,10 +1,16 @@
 package com.mikedevcol.restaurantapi.security;
 
 import java.nio.charset.StandardCharsets;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
+import java.security.spec.KeySpec;
 import java.time.Duration;
 import java.time.Instant;
+import java.util.Arrays;
 
 import javax.crypto.SecretKey;
+import javax.crypto.SecretKeyFactory;
+import javax.crypto.spec.PBEKeySpec;
 import javax.crypto.spec.SecretKeySpec;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -57,7 +63,7 @@ public class JwtTokenComponent {
     this.accessTokenTtl = Duration.ofSeconds(accessTokenExpirationSeconds);
     this.refreshTokenTtl = Duration.ofSeconds(refreshTokenExpirationSeconds);
 
-    SecretKey secretKey = new SecretKeySpec(secret.getBytes(StandardCharsets.UTF_8), "HmacSHA256");
+    SecretKey secretKey = deriveSecretKey(secret, issuer);
     this.jwtEncoder = new NimbusJwtEncoder(new ImmutableSecret<SecurityContext>(secretKey));
 
     NimbusJwtDecoder decoder = NimbusJwtDecoder.withSecretKey(secretKey)
@@ -110,5 +116,20 @@ public class JwtTokenComponent {
 
     JwsHeader jwsHeader = JwsHeader.with(MacAlgorithm.HS256).type("JWT").build();
     return jwtEncoder.encode(JwtEncoderParameters.from(jwsHeader, claims)).getTokenValue();
+  }
+
+  private SecretKey deriveSecretKey(String secret, String issuer) {
+    char[] password = secret.toCharArray();
+    byte[] salt = issuer.getBytes(StandardCharsets.UTF_8);
+    try {
+      KeySpec keySpec = new PBEKeySpec(password, salt, 65_536, 256);
+      SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+      byte[] keyBytes = factory.generateSecret(keySpec).getEncoded();
+      return new SecretKeySpec(keyBytes, "HmacSHA256");
+    } catch (NoSuchAlgorithmException | InvalidKeySpecException exception) {
+      throw new IllegalStateException("Unable to derive JWT secret key", exception);
+    } finally {
+      Arrays.fill(password, '\0');
+    }
   }
 }
