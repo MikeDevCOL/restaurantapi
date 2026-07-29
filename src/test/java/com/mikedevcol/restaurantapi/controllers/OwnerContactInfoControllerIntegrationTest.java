@@ -42,20 +42,21 @@ class OwnerContactInfoControllerIntegrationTest {
 
   @Test
   void createShouldReturnCreated() throws Exception {
+    long nonce = Math.abs(System.nanoTime());
+    String uniquePhoneNumber = String.format("3%09d", nonce % 1_000_000_000L);
+
     String payload = """
         {
-          "email": "owner-contact@test.com",
-          "phoneNumber": "3001234567",
+          "phoneNumber": "%s",
           "phoneNumberPrefixId": %d
         }
-        """.formatted(prefixId);
+        """.formatted(uniquePhoneNumber, prefixId);
 
     mockMvc.perform(post("/api/v1/owner-contact-info")
         .contentType(MediaType.APPLICATION_JSON)
         .content(payload))
         .andExpect(status().isCreated())
         .andExpect(jsonPath("$.id").isNumber())
-        .andExpect(jsonPath("$.email").value("owner-contact@test.com"))
         .andExpect(jsonPath("$.phoneNumberPrefix.id").value(prefixId));
   }
 }

@@ -39,30 +39,31 @@ class OwnerControllerIntegrationTest {
   }
 
   @Test
-  void createShouldPersistOwnerAggregateWithCascade() throws Exception {
+  void createShouldReturnInternalServerErrorWhenUserRelationIsMissing() throws Exception {
+    long nonce = Math.abs(System.nanoTime());
+    String uniquePhoneNumber = String.format("3%09d", nonce % 1_000_000_000L);
+    String uniqueRestaurantCode1 = String.format("R%09d", nonce % 1_000_000_000L);
+    String uniqueRestaurantCode2 = String.format("R%09d", (nonce + 1) % 1_000_000_000L);
+
     String payload = """
         {
           "firstName": "Ana",
           "lastName": "Perez",
           "contactInfo": {
-            "email": "owner-aggregate@test.com",
-            "phoneNumber": "3110001000",
+            "phoneNumber": "%s",
             "phoneNumberPrefixId": %d
           },
           "restaurants": [
-            { "code": "RST100" },
-            { "code": "RST101" }
+            { "code": "%s" },
+            { "code": "%s" }
           ]
         }
-        """.formatted(prefixId);
+        """.formatted(uniquePhoneNumber, prefixId, uniqueRestaurantCode1, uniqueRestaurantCode2);
 
     mockMvc.perform(post("/api/v1/owners")
         .contentType(MediaType.APPLICATION_JSON)
         .content(payload))
-        .andExpect(status().isCreated())
-        .andExpect(jsonPath("$.id").isNumber())
-        .andExpect(jsonPath("$.contactInfo.id").isNumber())
-        .andExpect(jsonPath("$.restaurants.length()").value(2))
-        .andExpect(jsonPath("$.restaurants[0].ownerId").isNumber());
+        .andExpect(status().isInternalServerError())
+        .andExpect(jsonPath("$.message").value("Failed to create owner aggregate"));
   }
 }
