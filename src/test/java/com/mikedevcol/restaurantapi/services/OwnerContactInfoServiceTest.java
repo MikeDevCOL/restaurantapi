@@ -16,10 +16,11 @@ import com.mikedevcol.restaurantapi.core.dto.request.OwnerContactInfoCreateReque
 import com.mikedevcol.restaurantapi.core.dto.response.OwnerContactInfoResponse;
 import com.mikedevcol.restaurantapi.core.dto.response.PhoneNumberPrefixResponse;
 import com.mikedevcol.restaurantapi.core.error.ResourceNotFoundException;
-import com.mikedevcol.restaurantapi.models.OwnerContactInfo;
-import com.mikedevcol.restaurantapi.models.PhoneNumberPrefix;
-import com.mikedevcol.restaurantapi.repositories.OwnerContactInfoRepository;
-import com.mikedevcol.restaurantapi.repositories.PhoneNumberPrefixRepository;
+import com.mikedevcol.restaurantapi.core.models.OwnerContactInfo;
+import com.mikedevcol.restaurantapi.core.models.PhoneNumberPrefix;
+import com.mikedevcol.restaurantapi.core.repositories.OwnerContactInfoRepository;
+import com.mikedevcol.restaurantapi.core.repositories.PhoneNumberPrefixRepository;
+import com.mikedevcol.restaurantapi.core.services.OwnerContactInfoService;
 import com.mikedevcol.restaurantapi.shared.RestaurantApiMapper;
 
 @ExtendWith(MockitoExtension.class)

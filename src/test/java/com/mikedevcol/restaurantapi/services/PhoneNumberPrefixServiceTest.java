@@ -14,8 +14,9 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import com.mikedevcol.restaurantapi.core.dto.request.PhoneNumberPrefixCreateRequest;
 import com.mikedevcol.restaurantapi.core.dto.response.PhoneNumberPrefixResponse;
 import com.mikedevcol.restaurantapi.core.error.ConflictException;
-import com.mikedevcol.restaurantapi.models.PhoneNumberPrefix;
-import com.mikedevcol.restaurantapi.repositories.PhoneNumberPrefixRepository;
+import com.mikedevcol.restaurantapi.core.models.PhoneNumberPrefix;
+import com.mikedevcol.restaurantapi.core.repositories.PhoneNumberPrefixRepository;
+import com.mikedevcol.restaurantapi.core.services.PhoneNumberPrefixService;
 import com.mikedevcol.restaurantapi.shared.RestaurantApiMapper;
 
 @ExtendWith(MockitoExtension.class)

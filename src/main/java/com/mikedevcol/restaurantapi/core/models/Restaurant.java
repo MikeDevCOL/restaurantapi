@@ -1,4 +1,4 @@
-package com.mikedevcol.restaurantapi.models;
+package com.mikedevcol.restaurantapi.core.models;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

@@ -1,4 +1,4 @@
-package com.mikedevcol.restaurantapi.services;
+package com.mikedevcol.restaurantapi.core.services;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -7,10 +7,10 @@ import com.mikedevcol.restaurantapi.core.dto.request.RestaurantCreateRequest;
 import com.mikedevcol.restaurantapi.core.dto.response.RestaurantResponse;
 import com.mikedevcol.restaurantapi.core.error.ConflictException;
 import com.mikedevcol.restaurantapi.core.error.ResourceNotFoundException;
-import com.mikedevcol.restaurantapi.models.Owner;
-import com.mikedevcol.restaurantapi.models.Restaurant;
-import com.mikedevcol.restaurantapi.repositories.OwnerRepository;
-import com.mikedevcol.restaurantapi.repositories.RestaurantRepository;
+import com.mikedevcol.restaurantapi.core.models.Owner;
+import com.mikedevcol.restaurantapi.core.models.Restaurant;
+import com.mikedevcol.restaurantapi.core.repositories.OwnerRepository;
+import com.mikedevcol.restaurantapi.core.repositories.RestaurantRepository;
 import com.mikedevcol.restaurantapi.shared.RestaurantApiMapper;
 
 import lombok.RequiredArgsConstructor;

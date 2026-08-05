@@ -16,8 +16,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
 import com.mikedevcol.restaurantapi.configuration.TestContainerConfig;
-import com.mikedevcol.restaurantapi.models.PhoneNumberPrefix;
-import com.mikedevcol.restaurantapi.repositories.PhoneNumberPrefixRepository;
+import com.mikedevcol.restaurantapi.core.models.PhoneNumberPrefix;
+import com.mikedevcol.restaurantapi.core.repositories.PhoneNumberPrefixRepository;
 
 @SpringBootTest
 @Testcontainers

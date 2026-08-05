@@ -1,4 +1,4 @@
-package com.mikedevcol.restaurantapi.services;
+package com.mikedevcol.restaurantapi.core.services;
 
 import java.util.HashSet;
 import java.util.List;
@@ -14,14 +14,14 @@ import com.mikedevcol.restaurantapi.core.dto.response.OwnerResponse;
 import com.mikedevcol.restaurantapi.core.error.ConflictException;
 import com.mikedevcol.restaurantapi.core.error.OperationFailedException;
 import com.mikedevcol.restaurantapi.core.error.ResourceNotFoundException;
-import com.mikedevcol.restaurantapi.models.Owner;
-import com.mikedevcol.restaurantapi.models.OwnerContactInfo;
-import com.mikedevcol.restaurantapi.models.PhoneNumberPrefix;
-import com.mikedevcol.restaurantapi.models.Restaurant;
-import com.mikedevcol.restaurantapi.repositories.OwnerContactInfoRepository;
-import com.mikedevcol.restaurantapi.repositories.OwnerRepository;
-import com.mikedevcol.restaurantapi.repositories.PhoneNumberPrefixRepository;
-import com.mikedevcol.restaurantapi.repositories.RestaurantRepository;
+import com.mikedevcol.restaurantapi.core.models.Owner;
+import com.mikedevcol.restaurantapi.core.models.OwnerContactInfo;
+import com.mikedevcol.restaurantapi.core.models.PhoneNumberPrefix;
+import com.mikedevcol.restaurantapi.core.models.Restaurant;
+import com.mikedevcol.restaurantapi.core.repositories.OwnerContactInfoRepository;
+import com.mikedevcol.restaurantapi.core.repositories.OwnerRepository;
+import com.mikedevcol.restaurantapi.core.repositories.PhoneNumberPrefixRepository;
+import com.mikedevcol.restaurantapi.core.repositories.RestaurantRepository;
 import com.mikedevcol.restaurantapi.shared.RestaurantApiMapper;
 
 import lombok.RequiredArgsConstructor;

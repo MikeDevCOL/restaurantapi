@@ -1,4 +1,4 @@
-package com.mikedevcol.restaurantapi.models;
+package com.mikedevcol.restaurantapi.core.models;
 
 import java.util.LinkedHashSet;
 import java.util.Objects;
