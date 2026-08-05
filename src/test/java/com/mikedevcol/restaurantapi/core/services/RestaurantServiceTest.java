@@ -1,4 +1,4 @@
-package com.mikedevcol.restaurantapi.services;
+package com.mikedevcol.restaurantapi.core.services;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
