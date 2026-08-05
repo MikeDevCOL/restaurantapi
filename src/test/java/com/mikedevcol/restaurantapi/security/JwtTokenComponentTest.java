@@ -6,7 +6,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import org.junit.jupiter.api.Test;
 
 import com.mikedevcol.restaurantapi.config.JwtProperties;
-import com.mikedevcol.restaurantapi.dto.response.JwtTokenPairResponse;
+import com.mikedevcol.restaurantapi.core.dto.response.JwtTokenPairResponse;
 
 class JwtTokenComponentTest {
 

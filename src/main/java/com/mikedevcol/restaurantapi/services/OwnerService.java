@@ -8,12 +8,12 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.mikedevcol.restaurantapi.dto.request.OwnerCreateRequest;
-import com.mikedevcol.restaurantapi.dto.request.OwnerRestaurantCreateRequest;
-import com.mikedevcol.restaurantapi.dto.response.OwnerResponse;
-import com.mikedevcol.restaurantapi.error.ConflictException;
-import com.mikedevcol.restaurantapi.error.OperationFailedException;
-import com.mikedevcol.restaurantapi.error.ResourceNotFoundException;
+import com.mikedevcol.restaurantapi.core.dto.request.OwnerCreateRequest;
+import com.mikedevcol.restaurantapi.core.dto.request.OwnerRestaurantCreateRequest;
+import com.mikedevcol.restaurantapi.core.dto.response.OwnerResponse;
+import com.mikedevcol.restaurantapi.core.error.ConflictException;
+import com.mikedevcol.restaurantapi.core.error.OperationFailedException;
+import com.mikedevcol.restaurantapi.core.error.ResourceNotFoundException;
 import com.mikedevcol.restaurantapi.models.Owner;
 import com.mikedevcol.restaurantapi.models.OwnerContactInfo;
 import com.mikedevcol.restaurantapi.models.PhoneNumberPrefix;

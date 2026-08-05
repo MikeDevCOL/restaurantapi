@@ -3,10 +3,10 @@ package com.mikedevcol.restaurantapi.services;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.mikedevcol.restaurantapi.dto.request.OwnerContactInfoCreateRequest;
-import com.mikedevcol.restaurantapi.dto.response.OwnerContactInfoResponse;
-import com.mikedevcol.restaurantapi.error.ConflictException;
-import com.mikedevcol.restaurantapi.error.ResourceNotFoundException;
+import com.mikedevcol.restaurantapi.core.dto.request.OwnerContactInfoCreateRequest;
+import com.mikedevcol.restaurantapi.core.dto.response.OwnerContactInfoResponse;
+import com.mikedevcol.restaurantapi.core.error.ConflictException;
+import com.mikedevcol.restaurantapi.core.error.ResourceNotFoundException;
 import com.mikedevcol.restaurantapi.models.OwnerContactInfo;
 import com.mikedevcol.restaurantapi.models.PhoneNumberPrefix;
 import com.mikedevcol.restaurantapi.repositories.OwnerContactInfoRepository;

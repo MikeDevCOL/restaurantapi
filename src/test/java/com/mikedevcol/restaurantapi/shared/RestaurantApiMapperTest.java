@@ -6,9 +6,9 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-import com.mikedevcol.restaurantapi.dto.request.OwnerContactInfoCreateRequest;
-import com.mikedevcol.restaurantapi.dto.request.OwnerCreateRequest;
-import com.mikedevcol.restaurantapi.dto.request.OwnerRestaurantCreateRequest;
+import com.mikedevcol.restaurantapi.core.dto.request.OwnerContactInfoCreateRequest;
+import com.mikedevcol.restaurantapi.core.dto.request.OwnerCreateRequest;
+import com.mikedevcol.restaurantapi.core.dto.request.OwnerRestaurantCreateRequest;
 import com.mikedevcol.restaurantapi.models.Owner;
 import com.mikedevcol.restaurantapi.models.OwnerContactInfo;
 import com.mikedevcol.restaurantapi.models.PhoneNumberPrefix;

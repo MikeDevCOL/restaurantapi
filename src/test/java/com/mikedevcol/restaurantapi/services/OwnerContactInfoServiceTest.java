@@ -12,10 +12,10 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import com.mikedevcol.restaurantapi.dto.request.OwnerContactInfoCreateRequest;
-import com.mikedevcol.restaurantapi.dto.response.OwnerContactInfoResponse;
-import com.mikedevcol.restaurantapi.dto.response.PhoneNumberPrefixResponse;
-import com.mikedevcol.restaurantapi.error.ResourceNotFoundException;
+import com.mikedevcol.restaurantapi.core.dto.request.OwnerContactInfoCreateRequest;
+import com.mikedevcol.restaurantapi.core.dto.response.OwnerContactInfoResponse;
+import com.mikedevcol.restaurantapi.core.dto.response.PhoneNumberPrefixResponse;
+import com.mikedevcol.restaurantapi.core.error.ResourceNotFoundException;
 import com.mikedevcol.restaurantapi.models.OwnerContactInfo;
 import com.mikedevcol.restaurantapi.models.PhoneNumberPrefix;
 import com.mikedevcol.restaurantapi.repositories.OwnerContactInfoRepository;
