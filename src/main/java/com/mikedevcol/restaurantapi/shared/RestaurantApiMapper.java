@@ -5,19 +5,19 @@ import java.util.Objects;
 
 import org.springframework.stereotype.Component;
 
-import com.mikedevcol.restaurantapi.dto.request.OwnerContactInfoCreateRequest;
-import com.mikedevcol.restaurantapi.dto.request.OwnerCreateRequest;
-import com.mikedevcol.restaurantapi.dto.request.OwnerRestaurantCreateRequest;
-import com.mikedevcol.restaurantapi.dto.request.PhoneNumberPrefixCreateRequest;
-import com.mikedevcol.restaurantapi.dto.request.RestaurantCreateRequest;
-import com.mikedevcol.restaurantapi.dto.response.OwnerContactInfoResponse;
-import com.mikedevcol.restaurantapi.dto.response.OwnerResponse;
-import com.mikedevcol.restaurantapi.dto.response.PhoneNumberPrefixResponse;
-import com.mikedevcol.restaurantapi.dto.response.RestaurantResponse;
-import com.mikedevcol.restaurantapi.models.Owner;
-import com.mikedevcol.restaurantapi.models.OwnerContactInfo;
-import com.mikedevcol.restaurantapi.models.PhoneNumberPrefix;
-import com.mikedevcol.restaurantapi.models.Restaurant;
+import com.mikedevcol.restaurantapi.core.dto.request.OwnerContactInfoCreateRequest;
+import com.mikedevcol.restaurantapi.core.dto.request.OwnerCreateRequest;
+import com.mikedevcol.restaurantapi.core.dto.request.OwnerRestaurantCreateRequest;
+import com.mikedevcol.restaurantapi.core.dto.request.PhoneNumberPrefixCreateRequest;
+import com.mikedevcol.restaurantapi.core.dto.request.RestaurantCreateRequest;
+import com.mikedevcol.restaurantapi.core.dto.response.OwnerContactInfoResponse;
+import com.mikedevcol.restaurantapi.core.dto.response.OwnerResponse;
+import com.mikedevcol.restaurantapi.core.dto.response.PhoneNumberPrefixResponse;
+import com.mikedevcol.restaurantapi.core.dto.response.RestaurantResponse;
+import com.mikedevcol.restaurantapi.core.models.Owner;
+import com.mikedevcol.restaurantapi.core.models.OwnerContactInfo;
+import com.mikedevcol.restaurantapi.core.models.PhoneNumberPrefix;
+import com.mikedevcol.restaurantapi.core.models.Restaurant;
 
 @Component
 public class RestaurantApiMapper {

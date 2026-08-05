@@ -20,11 +20,11 @@ import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
 
 import com.mikedevcol.restaurantapi.configuration.TestContainerConfig;
-import com.mikedevcol.restaurantapi.models.Owner;
-import com.mikedevcol.restaurantapi.models.OwnerContactInfo;
-import com.mikedevcol.restaurantapi.models.PhoneNumberPrefix;
-import com.mikedevcol.restaurantapi.repositories.OwnerRepository;
-import com.mikedevcol.restaurantapi.repositories.PhoneNumberPrefixRepository;
+import com.mikedevcol.restaurantapi.core.models.Owner;
+import com.mikedevcol.restaurantapi.core.models.OwnerContactInfo;
+import com.mikedevcol.restaurantapi.core.models.PhoneNumberPrefix;
+import com.mikedevcol.restaurantapi.core.repositories.OwnerRepository;
+import com.mikedevcol.restaurantapi.core.repositories.PhoneNumberPrefixRepository;
 import com.mikedevcol.restaurantapi.security.models.Role;
 import com.mikedevcol.restaurantapi.security.models.User;
 

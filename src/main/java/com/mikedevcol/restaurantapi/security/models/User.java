@@ -1,6 +1,7 @@
 package com.mikedevcol.restaurantapi.security.models;
 
-import com.mikedevcol.restaurantapi.models.Owner;
+import com.mikedevcol.restaurantapi.core.models.Owner;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
