@@ -12,13 +12,14 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import com.mikedevcol.restaurantapi.dto.request.RestaurantCreateRequest;
-import com.mikedevcol.restaurantapi.dto.response.RestaurantResponse;
-import com.mikedevcol.restaurantapi.error.ResourceNotFoundException;
-import com.mikedevcol.restaurantapi.models.Owner;
-import com.mikedevcol.restaurantapi.models.Restaurant;
-import com.mikedevcol.restaurantapi.repositories.OwnerRepository;
-import com.mikedevcol.restaurantapi.repositories.RestaurantRepository;
+import com.mikedevcol.restaurantapi.core.dto.request.RestaurantCreateRequest;
+import com.mikedevcol.restaurantapi.core.dto.response.RestaurantResponse;
+import com.mikedevcol.restaurantapi.core.error.ResourceNotFoundException;
+import com.mikedevcol.restaurantapi.core.models.Owner;
+import com.mikedevcol.restaurantapi.core.models.Restaurant;
+import com.mikedevcol.restaurantapi.core.repositories.OwnerRepository;
+import com.mikedevcol.restaurantapi.core.repositories.RestaurantRepository;
+import com.mikedevcol.restaurantapi.core.services.RestaurantService;
 import com.mikedevcol.restaurantapi.shared.RestaurantApiMapper;
 
 @ExtendWith(MockitoExtension.class)
